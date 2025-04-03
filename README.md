@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository implements a robust and modular edge detection system using classical image processing methods (Canny, Sobel, Laplacian, Prewitt, Roberts) and the deep learning-based Holistically-Nested Edge Detection (HED) technique. These methods are implemented in Python to provide flexibility and modularity. The C++ implementation focuses on Canny edge detection only, chosen for its real-time performance. Outputs and visualization videos are located in the `results/` directory. 
+This repository implements a robust and modular edge detection system using classical image processing methods (Canny, Sobel, Laplacian, Prewitt, Roberts) and the deep learning-based Holistically-Nested Edge Detection (HED) technique. These methods are implemented in Python to provide flexibility and modularity. The C++ implementation focuses on Canny edge detection only, chosen for its real-time performance. Outputs and visualization videos are located in the `catkin_ws/results/` directory. 
 
 ## Directory Structure
 
@@ -90,7 +90,7 @@ For standalone execution using all image processing methods such as Canny, Sobel
 ```bash
 python3 src/edge_detection/src/edge_detector.py
 ```
-Results are stored in `results/basic/python/`. Please note that only Canny method is tuned and tested. Other methods are just implementations.
+Results are stored in `catkin_ws/results/basic/python/`. Please note that only Canny method is tuned and tested. Other methods are just implementations.
 
 
 ### C++:
@@ -100,7 +100,7 @@ rosrun edge_detection edge_detection_bin
 > **Note:** The C++ node uses only the Canny edge detection algorithm for performance reasons.
 
 
-Results are stored in `results/basic/cpp/`.
+Results are stored in `catkin_ws/results/basic/cpp/`.
 
 
 ## Vision ROS Integration
@@ -131,7 +131,7 @@ To test the service with images from directory, launch with:
 roslaunch edge_detection edge_detection_service_test.launch
 ```
 - Custom ROS Service (`srv/EdgeDetection.srv`) for modular use.
-- Processed images are saved under `results/service_client/python/`.
+- Processed images are saved under `catkin_ws/results/service_client/python/`.
 
 You can specify the edge detection method and thresholds in launch file parameters:
 ```xml
