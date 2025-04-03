@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository implements a robust and modular edge detection system using classical image processing methods (Canny, Sobel, Laplacian, Prewitt, Roberts) and the deep learning-based Holistically-Nested Edge Detection (HED) technique. These methods are implemented in Python to provide flexibility and modularity. The C++ implementation focuses on Canny edge detection only, chosen for its real-time performance.
+This repository implements a robust and modular edge detection system using classical image processing methods (Canny, Sobel, Laplacian, Prewitt, Roberts) and the deep learning-based Holistically-Nested Edge Detection (HED) technique. These methods are implemented in Python to provide flexibility and modularity. The C++ implementation focuses on Canny edge detection only, chosen for its real-time performance. Outputs and visualization videos are located in the `results/` directory. 
 
 ## Directory Structure
 
@@ -81,22 +81,19 @@ Visualize the robot model:
 roslaunch edge_detection state_test.launch
 ```
 
-## Results
-Outputs and visualization videos are located in the `results/` directory. 
 
-### Basic Edge Detection
+## Basic Edge Detection
 
-#### Python:
+### Python:
 For standalone execution using all image processing methods such as Canny, Sobel, Laplacian, Prewitt, Roberts as well as deep learning-based Holistically-Nested Edge Detection (HED) method:
 
 ```bash
-python3 src/edge_detection/src/edge_det
-ector.py
+python3 src/edge_detection/src/edge_detector.py
 ```
 Results are stored in `results/basic/python/`. Please note that only Canny method is tuned and tested. Other methods are just implementations.
 
 
-#### C++:
+### C++:
 ```bash
 rosrun edge_detection edge_detection_bin
 ```
@@ -106,9 +103,9 @@ rosrun edge_detection edge_detection_bin
 Results are stored in `results/basic/cpp/`.
 
 
-### Vision ROS Integration
+## Vision ROS Integration
 
-#### C++ Node:
+### C++ Node:
 ```bash
 roslaunch edge_detection edge_detection_cpp.launch
 ```
@@ -126,8 +123,8 @@ roslaunch edge_detection edge_detection_cpp.launch
 Recorded output videos of the markers and the robot on Rviz in both C++ and Python for a duration of two loops (one loop with all combined visualization and the next loop without robot model and pointclouds) of the given .bag file are placed in results/vision_ros/
 
 
-####  Python Nodes: ROS Service + Client
-
+###  Python Nodes: 
+#### ROS Service + Client Test
 This setup uses a modular Python-based ROS service and a client. 
 To test the service with images from directory, launch with:
 ```bash
@@ -147,10 +144,12 @@ Valid options: `canny`, `sobel`, `laplacian`, `prewitt`, `roberts`, `hed`
 > **Note:** Only Canny method is tuned and tested.
 
 
-#### Real-Time Service with RViz:
+#### Real-Time Service-Client with RViz:
 ```bash
 roslaunch edge_detection edge_detection_service.launch
 ```
+This launch file runs the edge detection service and a client node that subscribes to image topics, calls the service in real-time, and publishes the output overlay image and 3D edge markers for visualization in RViz.
+
 > **Note:** This also allows selecting the method via the `method` parameter in the launch file. But only Canny method is tuned and tested.
 
 
