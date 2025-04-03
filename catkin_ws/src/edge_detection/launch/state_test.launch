@@ -1,0 +1,17 @@
+<!-- state_test.launch-->
+
+<launch>
+  <!-- Launch argument for the bag file path -->
+  <arg name="bag_path" default="/root/catkin_ws/src/edge_detection/data/bagfiles/withpointcloud.bag"
+       doc="Absolute path to the .bag file you want to play" />
+
+  <!-- Launch the robot description using mira_picker -->
+  <include file="$(find mira_picker)/launch/display.launch">
+    <arg name="gripper_name" value="robotiq2f_140" />
+    <arg name="publish_joint_state" value="true" />
+    <arg name="publish_robot_state" value="true" />
+    <arg name="rvizconfig" value="$(find mira_picker)/rviz/urdf_simple.rviz" />
+
+  </include>
+
+</launch>
