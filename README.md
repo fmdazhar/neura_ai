@@ -30,7 +30,7 @@ catkin_ws/
 
     See ROS Tutorials: http://wiki.ros.org/ROS/Tutorials 
 
-5. Download the provided bagfiles from https://drive.google.com/file/d/1AMD9iy0D7eYJkkI8dercBVxeL6faP4Ge/view?usp=drive_link and place it in catkin_ws/src/data/bagfiles.
+5. Download the provided bagfiles from https://drive.google.com/file/d/1AMD9iy0D7eYJkkI8dercBVxeL6faP4Ge/view?usp=drive_link and place it in catkin_ws/src/edge_detection/data/bagfiles.
 
 ## Installation
 
