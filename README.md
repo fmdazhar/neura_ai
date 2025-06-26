@@ -1,4 +1,4 @@
-# Neura Vision Programming Challenge: Edge Detection with ROS
+# Edge Detection with ROS
 
 ## Overview
 
